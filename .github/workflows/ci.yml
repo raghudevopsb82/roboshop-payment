@@ -1,0 +1,19 @@
+name: Payment CICD
+run-name: Payment CICD
+on: [push]
+jobs:
+  ci:
+    uses: raghudevopsb82/github-reusable-actions/.github/workflows/ci.yml@main
+    with:
+      component: payment
+
+  deploy:
+    needs: ci
+    uses: raghudevopsb82/github-reusable-actions/.github/workflows/deploy.yml@main
+    with:
+      component: payment
+
+
+
+
+
